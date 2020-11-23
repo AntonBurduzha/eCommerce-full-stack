@@ -3,7 +3,7 @@ import { Form, Button, Row, Col, Table } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Message, Loader } from 'components';
-import { USER_UPDATE_RESET } from 'constants/userConstants';
+import { USER_UPDATE_PROFILE_RESET } from 'constants/userConstants';
 import { getUserDetails, updateUserProfile } from 'actions/userActions';
 import { listMyOrders } from 'actions/orderActions';
 
@@ -33,7 +33,7 @@ const ProfileScreen = ({ history }) => {
             history.push('/login');
         } else {
             if (!user || !user.name || success) {
-                dispatch({ type: USER_UPDATE_RESET });
+                dispatch({ type: USER_UPDATE_PROFILE_RESET });
                 dispatch(getUserDetails('profile'));
                 dispatch(listMyOrders());
             } else {
