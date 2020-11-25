@@ -31,7 +31,7 @@ const ProductEditScreen = ({ match, history }) => {
         if (successUpdate) {
             dispatch({ type: PRODUCT_UPDATE_RESET });
             dispatch({ type: PRODUCT_DETAIL_RESET });
-            history.push('/admin/productlist');
+            history.push('/admin/productList');
         } else {
             if (!product.name || product._id !== productId) {
                 dispatch(listProductDetails(productId));
@@ -70,7 +70,7 @@ const ProductEditScreen = ({ match, history }) => {
 
     return (
         <>
-            <Link to="/admin/productlist" className="btn btn-light my-3">
+            <Link to="/admin/productList" className="btn btn-light my-3">
                 Go Back
             </Link>
             <h1>Edit Product</h1>
