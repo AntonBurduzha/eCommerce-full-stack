@@ -9,10 +9,10 @@ node_modules/
 .vscode
 
 # testing
-/coverage
+frontend//coverage
 
 # production
-/build
+frontend/build
 
 # misc
 .DS_Store

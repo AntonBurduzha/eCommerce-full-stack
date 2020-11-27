@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap';
 import { listProductDetails, createProductReview } from 'actions/productActions';
-import { Rating, Message, Loader } from 'components';
+import { Rating, Message, Loader, Meta } from 'components';
 import { PRODUCT_CREATE_REVIEW_RESET } from 'constants/productConstants';
 
 const ProductScreen = ({ history, match }) => {
@@ -50,6 +50,7 @@ const ProductScreen = ({ history, match }) => {
                 <Message variant="danger">{error}</Message>
             ) : (
                 <>
+                    <Meta title={product.name} />
                     <Row>
                         <Col md={6}>
                             <Image src={product.image} alt={product.name} fluid />
